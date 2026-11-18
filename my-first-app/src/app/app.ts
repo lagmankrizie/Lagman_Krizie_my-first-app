@@ -1,0 +1,44 @@
+import { ProfileCard } from './profile-card/profile-card';
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Skills } from "./skills/skills";
+import { Footer } from "./footer/footer";
+import { Header } from "./header/header";
+import { Proficiency } from './proficiency';
+
+@Component({
+  imports: [ProfileCard, Skills, Footer, Header],
+  selector: 'app-root',
+  styleUrl: './app.css',
+  templateUrl: './app.html',
+})
+export class App {
+  fullName = 'Krizie Mae P. Lagman';
+  location = 'San Fernando, Pampanga';
+  email = 'lagmankrizie@gmail.com';
+  phone = '0908 633 4830';
+
+  profile = 'I am a 3rd year student major in web development. I enjoy learning new technologies and building useful applications. I am hardworking, detail-oriented, and eager to grow my skills through real projects and teamwork.';
+
+  skills = [
+    'HTML and CSS',
+    'JavaScript',
+    'Dart',
+    'Angular',
+    'Python'
+  ];
+
+  proficiencies: Proficiency[] = [
+    { tool: 'Visual Studio Code', level: 'Advanced' },
+    { tool: 'Git and GitHub', level: 'Intermediate' },
+    { tool: 'Node.js and npm', level: 'Intermediate' },
+    { tool: 'Angular CLI', level: 'Beginner' }
+  ];
+
+  message = 'Click any skill above to select it.';
+  clickCount = 0;
+
+  onSkillSelected(skill: string) {
+    this.message = `You selected: ${skill}`;
+  }
+}
