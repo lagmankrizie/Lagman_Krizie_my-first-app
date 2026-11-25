@@ -1,0 +1,36 @@
+/* Global styles: apply to every component in the application. */
+body {
+  margin: 0;
+  color: #252525;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  background-color: #f9f3ed;
+}
+
+section {
+  margin: 26px 0;
+}
+
+/* Shared heading style, used by several components. */
+.section-title {
+  color: #531c22;
+  border-bottom: 1px solid #aaaaaa;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+}
+
+/* Page container, shared by every routed page. */
+.resume {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 32px;
+}
+
+
+@media (max-width: 600px) {
+  .resume {
+    margin: 24px auto;
+    padding: 0 18px;
+  }
+}
